@@ -102,7 +102,7 @@ function checkAnswer(choice) {
 // 範囲を選択する関数
 function selectRange() {
     const range = document.querySelector('input[name="question-range"]:checked').value;
-    selectedQuestions = questions.filter(q => q.id <= range); // IDに基づいてフィルタリング
+    selectedQuestions = questions.filter(q => q.id <= parseInt(range, 10)); // IDに基づいてフィルタリング
     currentQuestionIndex = Math.floor(Math.random() * selectedQuestions.length);
     showQuestion();
 }
