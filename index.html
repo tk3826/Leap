@@ -9,9 +9,17 @@
 <body>
     <div id="quiz-container">
         <h1>英単語クイズ</h1>
+        
+        <div id="range-selection">
+            <h3>問題の範囲を選択してください:</h3>
+            <label><input type="radio" name="question-range" value="2" checked> 1-2</label>
+            <label><input type="radio" name="question-range" value="4"> 1-4</label>
+            <button id="start-button">スタート</button>
+        </div>
+
         <div id="question"></div>
         <div id="choices"></div>
-        <button id="next-button">次へ</button>
+        <button id="next-button" style="display:none;">次へ</button>
     </div>
     <script src="script.js"></script>
 </body>
