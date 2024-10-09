@@ -95,9 +95,17 @@ function checkAnswer(choice) {
     } else {
         alert('不正解！');
     }
+    // 次の質問へ進むボタンを表示
+    document.getElementById('next-button').style.display = 'block';
+}
+
+// 次の質問を表示する処理
+document.getElementById('next-button').onclick = () => {
     currentQuestionIndex = Math.floor(Math.random() * selectedQuestions.length);
     showQuestion();
-}
+    document.getElementById('next-button').style.display = 'none';
+};
+
 
 // 範囲を選択する関数
 function selectRange() {
@@ -108,7 +116,10 @@ function selectRange() {
 }
 
 // ボタンの設定
-document.getElementById('start-button').onclick = selectRange;
+// ボタンの設定
+document.getElementById('start-button').onclick = () => {
+    selectRange();
+    showQuestion(); // ここで初めて問題を表示
+};
 
-showQuestion();
 
